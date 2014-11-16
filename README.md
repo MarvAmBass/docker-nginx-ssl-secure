@@ -24,3 +24,23 @@ _If you forget the dh4096.pem file, it will be created at the first start - but 
 ## Based on
 
 This Dockerfile bases on the [/\_/nginx/](https://registry.hub.docker.com/_/nginx/) Official Image.
+
+## Cheat Sheet
+
+### Creating the dh4096.pem with openssl
+
+To create a Diffie-Hellman cert, you can use the following command
+
+    openssl dhparam -out dh4096.pem 4096
+
+### Creating a high secure SSL CSR with openssl
+
+This cert might be incompatible with Windows 2000, XP and older IE Versions
+
+    openssl req -nodes -new -newkey rsa:4096 -out csr.pem -sha256
+
+### Creating a self-signed ssl cert
+
+Please note, that the Common Name (CN) is important and should be the FQDN to the secured server:
+
+    openssl req -x509 -newkey rsa:4086 -keyout key.pem -out cert.pem -days 3650 -nodes -sha256
