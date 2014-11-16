@@ -43,4 +43,6 @@ This cert might be incompatible with Windows 2000, XP and older IE Versions
 
 Please note, that the Common Name (CN) is important and should be the FQDN to the secured server:
 
-    openssl req -x509 -newkey rsa:4086 -keyout key.pem -out cert.pem -days 3650 -nodes -sha256
+    openssl req -x509 -newkey rsa:4086 \
+    -keyout key.pem -out cert.pem \
+    -days 3650 -nodes -sha256
