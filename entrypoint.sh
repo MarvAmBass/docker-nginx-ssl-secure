@@ -23,9 +23,11 @@ then
   echo ">> doing some preparations..."
   echo ""
 
-#  openssl dhparam -out "$DH4096" 4096
-  openssl dhparam -out "$DH4096" 512
+  openssl dhparam -out "$DH4096" 4096
 fi
+
+echo ">> copy /etc/nginx/external/*.conf files to /etc/nginx/conf.d/"
+cp /etc/nginx/external/*.conf /etc/nginx/conf.d/ 2> /dev/null > /dev/null
 
 # exec CMD
 echo ">> exec docker CMD"
