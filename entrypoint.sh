@@ -14,8 +14,14 @@ IMPORTANT:
 
 EOF
 
+if [ -z ${DH_SIZE+x} ]
+then
+  >&2 echo ">> no \$DH_SIZE specified using default" 
+  DH_SIZE="4096"
+fi
 
-DH4096="/etc/nginx/external/dh4096.pem"
+
+DH="/etc/nginx/external/dh.pem"
 
 if [ ! -e "$DH4096" ]
 then
@@ -23,7 +29,8 @@ then
   echo ">> doing some preparations..."
   echo ""
 
-  openssl dhparam -out "$DH4096" 4096
+  echo "generating $DH with size: $DH_SIZE"
+  openssl dhparam -out "$DH" $DH_SIZE
 fi
 
 echo ">> copy /etc/nginx/external/*.conf files to /etc/nginx/conf.d/"

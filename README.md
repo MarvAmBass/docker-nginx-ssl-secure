@@ -9,15 +9,21 @@ View in Docker Registry [marvambass/nginx-ssl-secure](https://registry.hub.docke
 
 View in GitHub [MarvAmBass/docker-nginx-ssl-secure](https://github.com/MarvAmBass/docker-nginx-ssl-secure)
 
+## Environment variables and defaults
+
+* __DH\_SIZE__
+ * default: 4096 (which takes a long time to create), for demo or unsecure applications you can use smaller values like 512
+
 ## Running marvambass/nginx-ssl-secure Container
 
 This Dockerfile is not really made for direct usage. It should be used as base-image for your nginx project. But you can run it anyways.
 
-You should overwrite the _/etc/nginx/external/_ with a folder, containing your nginx __\*.conf__ files, certs and a __dh4096.pem__.   
-_If you forget the dh4096.pem file, it will be created at the first start - but this can/will take a long time!_
+You should overwrite the _/etc/nginx/external/_ with a folder, containing your nginx __\*.conf__ files, certs and a __dh.pem__.   
+_If you forget the dh.pem file, it will be created at the first start - but this can/will take a long time!_
 
     docker run -d \
     -p 80:80 -p 443:443 \
+    -e 'DH_SIZE=512' \
     -v $EXT_DIR:/etc/nginx/external/ \
     marvambass/nginx-ssl-secure
 
