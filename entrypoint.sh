@@ -23,13 +23,13 @@ fi
 
 DH="/etc/nginx/external/dh.pem"
 
-if [ ! -e "$DH4096" ]
+if [ ! -e "$DH" ]
 then
   echo ">> seems like the first start of nginx"
   echo ">> doing some preparations..."
   echo ""
 
-  echo "generating $DH with size: $DH_SIZE"
+  echo ">> generating $DH with size: $DH_SIZE"
   openssl dhparam -out "$DH" $DH_SIZE
 fi
 
