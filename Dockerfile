@@ -12,7 +12,7 @@ RUN sed -i 's/error_log.*/error_log \/dev\/stdout info;/g' /etc/nginx/nginx.conf
 RUN sed -i 's/^pid/daemon off;\npid/g'  /etc/nginx/nginx.conf
 
 ADD basic.conf /etc/nginx/conf.d/basic.conf
-ADD security.conf /etc/nginx/conf.d/security.conf
+ADD ssl.conf /etc/nginx/conf.d/ssl.conf
 
 ADD entrypoint.sh /opt/entrypoint.sh
 RUN chmod a+x /opt/entrypoint.sh
