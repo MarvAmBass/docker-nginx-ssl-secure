@@ -7,6 +7,9 @@ IMPORTANT:
   IF you use SSL inside your personal NGINX-config,
   you should add the Strict-Transport-Security header like:
 
+    # only this domain
+    add_header Strict-Transport-Security "max-age=31536000";
+    # apply also on subdomains
     add_header Strict-Transport-Security "max-age=31536000; includeSubdomains";
 
   to your config.
