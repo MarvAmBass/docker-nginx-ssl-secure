@@ -14,7 +14,7 @@ View in GitHub [MarvAmBass/docker-nginx-ssl-secure](https://github.com/MarvAmBas
 ## Environment variables and defaults
 
 * __DH\_SIZE__
- * default: 4096 (which takes a long time to create), for demo or unsecure applications you can use smaller values like 512
+ * default: 2048 (which takes a long time to create), for demo or unsecure applications you can use smaller values like 512
 
 ## Running marvambass/nginx-ssl-secure Container
 
