@@ -20,7 +20,7 @@ EOF
 if [ -z ${DH_SIZE+x} ]
 then
   >&2 echo ">> no \$DH_SIZE specified using default" 
-  DH_SIZE="4096"
+  DH_SIZE="2048"
 fi
 
 
