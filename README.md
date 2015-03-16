@@ -1,7 +1,7 @@
 # Docker very secured Nginx with secure SSL
 _maintained by MarvAmBass_
 
-[FAQ - All you need to know about the marvambass Containers](http://marvin.im/posts/IT/Docker/marvambass/FAQ__All_you_need_to_know_about_the_marvambass_Containers.html)
+[FAQ - All you need to know about the marvambass Containers]https://marvin.im/docker-faq-all-you-need-to-know-about-the-marvambass-containers/)
 
 ## What is it
 
